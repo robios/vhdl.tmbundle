@@ -1989,10 +1989,18 @@
 						)?
 
 						# The word process #4
-						((?i:process))
+						((?i:process))\b
+
+						# Optional same-line sensitivity list $6
+						(\s*(\((?:[^()]|\([^()]*\))*\)))?
 					</string>
 					<key>beginCaptures</key>
 					<dict>
+						<key>0</key>
+						<dict>
+							<key>name</key>
+							<string>meta.head.process.vhdl</string>
+						</dict>
 						<key>2</key>
 						<dict>
 							<key>name</key>
@@ -2007,6 +2015,16 @@
 						<dict>
 							<key>name</key>
 							<string>keyword.control.process.vhdl</string>
+						</dict>
+						<key>6</key>
+						<dict>
+							<key>patterns</key>
+							<array>
+								<dict>
+									<key>include</key>
+									<string>#cleanup</string>
+								</dict>
+							</array>
 						</dict>
 					</dict>
 					<key>end</key>
