@@ -77,8 +77,8 @@ sub findcomponent {
     $in =~ s{^end\s*component\s*\w+\s*;$}{}m;
     my @in = split /\n/, $in;
     foreach (@in) {
-	   # change the "component X is" definition line to "U_X : X"
-    	   $_ =~ s{^\s*component\s+([^ ]+)\s+is\s*$}{U_$1\$\{1:_0\} : $1};
+	   # change the "component X [is]" definition line to "U_X : X"
+    	   $_ =~ s{^\s*component\s+([^ ]+?)(?:\s+is)?\s*$}{U_$1\$\{1:_0\} : $1};
 
         # flag if we have found a component with the keyword
         if ( lc($1) =~ /\b($key)\b/ and $found == 0 ) {

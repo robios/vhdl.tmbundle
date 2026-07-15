@@ -58,7 +58,7 @@ sub parsefile {
     my $in = join "", @in;
     my $key = shift ;
     # split the file apart
-    $in =~ m{(.*)\s+(^\s*entity.*)(?=^\s*end entity)[^;]*;\s*(.*)}ms;
+    $in =~ m{(.*)\s+(^\s*entity.*?)(?=^\s*end\b)[^;]*;\s*(.*)}ms;
     # my $before = $1;
     my $entity = $2;
     # my $after = $3;
