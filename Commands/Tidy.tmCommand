@@ -10,21 +10,29 @@
 
 EMACS=emacs
 
-$EMACS --batch "$TM_FILEPATH" --eval="(setq-default vhdl-basic-offset $TM_TAB_SIZE)" --eval="(vhdl-beautify-buffer)"  -f save-buffer &amp;&gt; /dev/null
+$EMACS --batch "$TM_FILEPATH" --eval="(setq make-backup-files nil)" --eval="(setq-default vhdl-basic-offset $TM_TAB_SIZE)" --eval="(vhdl-beautify-buffer)"  -f save-buffer &amp;&gt; /dev/null
 
 cat "$TM_FILEPATH"
 </string>
 	<key>input</key>
 	<string>none</string>
+	<key>inputFormat</key>
+	<string>text</string>
 	<key>keyEquivalent</key>
 	<string>^H</string>
 	<key>name</key>
 	<string>Tidy</string>
-	<key>output</key>
+	<key>outputCaret</key>
+	<string>interpolateByLine</string>
+	<key>outputFormat</key>
+	<string>text</string>
+	<key>outputLocation</key>
 	<string>replaceDocument</string>
 	<key>scope</key>
 	<string>source.vhdl</string>
 	<key>uuid</key>
 	<string>44B95BB0-70BB-45A6-A3D6-3FC8D7F33F21</string>
+	<key>version</key>
+	<integer>2</integer>
 </dict>
 </plist>
